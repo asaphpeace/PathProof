@@ -1351,7 +1351,7 @@ onMounted(loadAll)
 }
 .graph-node {
   position: absolute; box-sizing: border-box; transform: translateX(-50%); width: 138px; padding: 9px 8px;
-  border-radius: 10px; background: oklch(0.24 0.02 250); border-width: 2px; border-style: solid;
+  border-radius: 10px; background: var(--surface2); border-width: 2px; border-style: solid;
   cursor: pointer; white-space: normal; text-align: center; line-height: 1.25; word-break: break-word;
 }
 .graph-node.is-chokepoint { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 50%, transparent); }
@@ -1371,7 +1371,7 @@ onMounted(loadAll)
   position: absolute; top: -8px; right: -8px; min-width: 18px; height: 18px; padding: 0 4px;
   border-radius: 999px; background: var(--red); color: var(--bg); font-size: 10px; font-weight: 800;
   display: flex; align-items: center; justify-content: center; line-height: 1;
-  border: 2px solid oklch(0.24 0.02 250);
+  border: 2px solid var(--surface2);
 }
 /* Deliberately NOT a circle like .credential-badge above — a distinct
    pill shape (plus its own icon and severity-driven color) so the two
@@ -1382,7 +1382,7 @@ onMounted(loadAll)
   position: absolute; top: -8px; left: -8px; height: 18px; padding: 0 5px 0 4px;
   border-radius: 999px; color: var(--bg); font-size: 9.5px; font-weight: 800;
   display: flex; align-items: center; gap: 2px; line-height: 1;
-  border: 2px solid oklch(0.24 0.02 250);
+  border: 2px solid var(--surface2);
 }
 
 .legend-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; font-size: 11px; color: var(--text3); }

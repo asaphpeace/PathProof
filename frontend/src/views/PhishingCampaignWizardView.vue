@@ -156,7 +156,7 @@
                 mode="draft"
                 :subject="previewSubject"
                 :body-html="previewBodyHtml"
-                :from-label="meta?.sending_identity ?? 'Sentinel'"
+                :from-label="meta?.sending_identity ?? 'PathProof'"
                 :to-label="previewToLabel"
                 :title="mode === 'ai' ? 'Example scaffold — regenerated fresh at launch' : 'What this will actually send'"
                 :footer-note="mode === 'ai'
@@ -224,7 +224,7 @@
         <template v-else-if="!authComplete">
           <div class="auth-card">
             <div class="auth-head"><span class="lock">🔒</span><b>Rules of Engagement signature</b><span class="req-tag">REQUIRED PATH</span></div>
-            <p>A countersigned ROE is what makes this legal and auditable. Sentinel sends the document via Dropbox Sign, blocks all dispatch until it returns signed, and files the executed copy against every campaign this engagement produces.</p>
+            <p>A countersigned ROE is what makes this legal and auditable. PathProof sends the document via Dropbox Sign, blocks all dispatch until it returns signed, and files the executed copy against every campaign this engagement produces.</p>
             <div class="signer-row">
               <span class="signer-label">SIGNER</span>
               <input v-model="signerEmail" class="input" :placeholder="signerPlaceholder" />
@@ -277,7 +277,7 @@
               mode="draft"
               :subject="preview?.subject ?? 'Loading…'"
               :body-html="preview?.body_html ?? ''"
-              :from-label="meta?.sending_identity ?? 'Sentinel'"
+              :from-label="meta?.sending_identity ?? 'PathProof'"
               :to-label="`${selectedTargetList?.name ?? ''} · ${selectedTargetList?.entries.length ?? 0} recipients`"
               title="Review before they receive this"
               footer-note="Generated from the approved scaffold using this tenant's DMARC posture. Approving records your name against this exact HTML."

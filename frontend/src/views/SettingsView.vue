@@ -1,7 +1,7 @@
 <template>
   <div class="settings">
     <h1 class="title">Settings</h1>
-    <p class="subtitle">Cloud accounts, hosts, and domains that authorize Sentinel Command's scan modules.</p>
+    <p class="subtitle">Cloud accounts, hosts, and domains that authorize PathProof's scan modules.</p>
 
     <div class="card">
       <div class="header-row">
@@ -122,7 +122,7 @@
 
       <p v-if="domainsError" class="error">{{ domainsError }}</p>
       <div v-if="verifiedDomains.length === 0 && !loadingDomains" class="empty">
-        No ownership-verified domains yet — verify a domain in Sentinel first.
+        No ownership-verified domains yet — verify a domain in ZoneProof first.
       </div>
 
       <div v-for="d in verifiedDomains" :key="d.id" class="connection-row">
@@ -354,7 +354,7 @@
 
         <p v-if="oauthFormError" class="error">{{ oauthFormError }}</p>
         <p class="dev-note">
-          Read-only — grants Sentinel visibility into which third-party apps have been
+          Read-only — grants PathProof visibility into which third-party apps have been
           authorized in this tenant. No signature required: no employees are targeted and
           nothing beyond reading Graph API data happens here.
         </p>
@@ -496,7 +496,7 @@ async function saveRename(kind: 'cloud' | 'host', id: string) {
 }
 
 // Plain-language breakdown of an IAM role ARN for the tooltip on the raw
-// technical identity string — "arn:aws:iam::131189842899:role/X" says a
+// technical identity string — "arn:aws:iam::123456789012:role/X" says a
 // lot if you already know AWS's ARN grammar, nothing at all if you don't.
 function arnExplainer(arn: string): string {
   const match = arn.match(/^arn:aws:iam::(\d+):role\/(.+)$/)

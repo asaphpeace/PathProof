@@ -81,11 +81,11 @@
               <b>{{ emailAuthEvidence.unaligned_message_count }} of {{ emailAuthEvidence.total_message_count }}</b>
               real messages sent as {{ primaryDomainName }} failed DMARC alignment from unauthorized senders.
               <template v-if="emailAuthEvidence.spoof_test_status === 'open'">
-                Sentinel's own spoof test confirmed a forged message was <b>not blocked</b>
+                PathProof's own spoof test confirmed a forged message was <b>not blocked</b>
                 <template v-if="emailAuthEvidence.spoof_test_date"> on {{ formatDateOnly(emailAuthEvidence.spoof_test_date) }}</template>.
               </template>
               <template v-else-if="emailAuthEvidence.spoof_test_status">
-                Sentinel's own spoof test result: {{ emailAuthEvidence.spoof_test_detail }}
+                PathProof's own spoof test result: {{ emailAuthEvidence.spoof_test_detail }}
               </template>
             </p>
             <div class="ev-source">SOURCE <RouterLink to="/coverage">Coverage Map</RouterLink> / {{ primaryDomainName }} / DMARC aggregate reports + spoof test</div>
@@ -159,10 +159,10 @@
           mode="sent"
           :subject="campaign?.subject_sent ?? ''"
           :body-html="campaign?.body_html_sent ?? ''"
-          :from-label="meta?.sending_identity ?? 'Sentinel'"
+          :from-label="meta?.sending_identity ?? 'PathProof'"
           :to-label="firstRecipientLabel"
           :title="`Received by ${counts.sent} recipients on ${campaign ? formatDateOnly(campaign.launched_at) : ''}`"
-          footer-note="Rendered from body_html_sent. Links are rewritten to the simulation host — no credential ever leaves Sentinel in clear text."
+          footer-note="Rendered from body_html_sent. Links are rewritten to the simulation host — no credential ever leaves PathProof in clear text."
         />
       </div>
     </div>
@@ -428,7 +428,7 @@ onMounted(load)
 .dept-block { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
 .dept-row { display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 10px; }
 .dept-name { font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.dept-bar-track { height: 8px; background: #0e1626; border-radius: 4px; overflow: hidden; }
+.dept-bar-track { height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
 .dept-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
 .dept-pct { font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; }
 .dept-sub { grid-column: 1 / -1; font-size: 10.5px; color: var(--text3); margin-top: -4px; }

@@ -25,7 +25,7 @@
             <div class="gauge-max">/ 100</div>
           </div>
         </div>
-        <div class="score-label">Composite Sentinel Score</div>
+        <div class="score-label">Composite ZoneProof Score</div>
         <div v-if="scoreDelta !== null" class="score-delta" :class="{ down: scoreDelta < 0, up: scoreDelta > 0 }">
           {{ scoreDelta > 0 ? '▲' : scoreDelta < 0 ? '▼' : '—' }} {{ Math.abs(scoreDelta) }} pts vs last week
         </div>
@@ -113,7 +113,7 @@ const quickActionError = ref('')
 
 const gaugeStyle = computed(() => {
   const score = overallScore.value ?? 0
-  return `conic-gradient(var(--accent) ${score * 3.6}deg, oklch(0.24 0.02 250) 0deg)`
+  return `conic-gradient(var(--accent) ${score * 3.6}deg, var(--surface2) 0deg)`
 })
 
 const order: Record<string, number> = { done: 0, partial: 1, 'not-started': 2 }
@@ -123,7 +123,7 @@ const coveragePreview = computed(() =>
 
 function statusDotColor(f: RosterEntry): string {
   const kind = statusKind(f.status)
-  return { 'not-started': 'oklch(0.55 0.02 250)', partial: 'var(--amber)', done: 'var(--green)' }[kind]
+  return { 'not-started': 'var(--text3)', partial: 'var(--amber)', done: 'var(--green)' }[kind]
 }
 
 function pillBg(severity: string): string {
@@ -247,7 +247,7 @@ async function runModule(feature: string) {
     return
   }
   if (feature === 'Email Authentication Defense') {
-    quickActionError.value = 'Continuously monitored via DMARC/SPF/MTA-STS report ingestion in Sentinel V1 — no manual trigger exists.'
+    quickActionError.value = 'Continuously monitored via DMARC/SPF/MTA-STS report ingestion in ZoneProof — no manual trigger exists.'
     return
   }
 

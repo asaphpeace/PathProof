@@ -3,10 +3,10 @@
     <div v-if="sidebarOpen" class="sidebar-backdrop" @click="sidebarOpen = false" />
     <aside class="sidebar" :class="{ open: sidebarOpen }">
       <div class="brand">
-        <div class="logo-badge">S</div>
+        <div class="logo-badge">P</div>
         <div>
-          <div class="brand-name">Sentinel</div>
-          <div class="brand-sub">for MSPs</div>
+          <div class="brand-name">PathProof</div>
+          <div class="brand-sub">by Foundation Security Labs</div>
         </div>
       </div>
 

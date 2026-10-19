@@ -164,7 +164,7 @@
         <PhishingEmailPreview
           :mode="previewModal.mode" :subject="previewModal.subject" :body-html="previewModal.bodyHtml"
           :to-label="previewModal.toLabel" :title="previewModal.title" :footer-note="previewModal.footerNote"
-          :from-label="meta?.sending_identity ?? 'Sentinel'"
+          :from-label="meta?.sending_identity ?? 'PathProof'"
         />
         <div v-if="previewModal.onApproveLaunch" class="preview-launch-actions">
           <div class="ghost-btn" @click="previewModal = null">Cancel</div>
@@ -669,7 +669,7 @@ onUnmounted(() => document.removeEventListener('click', closeRowMenuOnOutsideCli
 .etr-sent { font-variant-numeric: tabular-nums; }
 .etr-launch { color: var(--text2); font-size: 11.5px; }
 .etr-engagement { display: flex; align-items: center; gap: 8px; }
-.bar-track.small { flex: 1; height: 6px; background: #0e1626; border-radius: 3px; overflow: hidden; min-width: 40px; }
+.bar-track.small { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; min-width: 40px; }
 .bar-fill.clicked { height: 100%; border-radius: 3px; background: var(--accent); }
 .muted-dash { color: var(--text3); }
 .etr-status { min-width: 0; }

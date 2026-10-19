@@ -247,7 +247,7 @@ const visibleFindings = computed(() => {
 })
 
 // ── "Explain the cryptic stuff" — an AWS ARN like
-// "arn:aws:ec2:eu-north-1:131189842899:instance/i-01d8efdf537574bda" is
+// "arn:aws:ec2:eu-north-1:123456789012:instance/i-0abc123def4567890" is
 // only meaningful if you already know AWS's ARN grammar. Parsed into its
 // real parts (service, region, account, resource type/id) and rendered as
 // a plain sentence fragment — the raw ARN is never hidden, just moved to a

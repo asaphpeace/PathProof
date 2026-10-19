@@ -34,7 +34,7 @@
             </div>
             <div class="risk-body">
               <div class="risk-label">Human risk score</div>
-              <p class="risk-note">Blends real click rate, credential-entry rate, report rate, and training completion across every campaign this tenant has ever run — the same figure that already feeds the composite Sentinel Score on Overview, shown here on its own for the first time.</p>
+              <p class="risk-note">Blends real click rate, credential-entry rate, report rate, and training completion across every campaign this tenant has ever run — the same figure that already feeds the composite ZoneProof Score on Overview, shown here on its own for the first time.</p>
               <p v-if="riskInsight" class="insight-line">{{ riskInsight }}</p>
             </div>
           </div>
@@ -343,7 +343,7 @@ onMounted(load)
 .dept-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
 .dept-row { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; }
 .dept-name { font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.dept-bar-track { height: 8px; background: #0e1626; border-radius: 4px; overflow: hidden; }
+.dept-bar-track { height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
 .dept-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
 .dept-pct { font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; }
 .dept-sub { grid-column: 1 / -1; font-size: 10.5px; color: var(--text3); margin-top: -6px; }

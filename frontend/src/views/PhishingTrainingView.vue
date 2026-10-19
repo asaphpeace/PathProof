@@ -300,7 +300,7 @@ async function loadAssignments(courseId: string) {
 const exportUrl = computed(() => editingId.value ? `/api/training-courses/${editingId.value}/assignments/export.csv` : '')
 
 const assignedStyle = { color: 'var(--text2)', background: 'var(--surface2)' }
-const completedStyle = { color: '#34e0a1', background: 'color-mix(in srgb, #34e0a1 14%, transparent)' }
+const completedStyle = { color: 'var(--green)', background: 'color-mix(in srgb, var(--green) 14%, transparent)' }
 
 onMounted(() => {
   loadCourses()
@@ -320,7 +320,7 @@ onMounted(() => {
 .empty { color: var(--text2); font-size: 13px; padding: 10px 0; }
 .empty.small { font-size: 12px; padding: 6px 0; }
 
-.primary-btn { background: var(--accent); color: #0b0d12; font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 7px; cursor: pointer; }
+.primary-btn { background: var(--accent); color: var(--ink); font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 7px; cursor: pointer; }
 .primary-btn.disabled { opacity: .5; cursor: default; }
 .ghost-btn { background: transparent; border: 1px solid var(--border); color: var(--text2); font-size: 12px; padding: 6px 12px; border-radius: 7px; cursor: pointer; width: fit-content; }
 .ghost-btn:hover { border-color: var(--text3); color: var(--text); }
@@ -368,7 +368,7 @@ onMounted(() => {
 .toggle-btn.small.active { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 .toggle-btn.small:disabled { opacity: .4; cursor: default; }
 .mini-btn { font-size: 12px; padding: 7px 14px; border-radius: 7px; cursor: pointer; }
-.mini-btn.primary { background: var(--accent); color: #0b0d12; font-weight: 600; }
+.mini-btn.primary { background: var(--accent); color: var(--ink); font-weight: 600; }
 .mini-btn.disabled { opacity: .5; cursor: default; }
 
 .assignment-row { display: flex; align-items: center; gap: 14px; padding: 9px 0; border-top: 1px solid var(--border); font-size: 12.5px; }

@@ -85,7 +85,7 @@ async function generate() {
 }
 .domain-input:focus { border-color: var(--accent); }
 .generate-btn {
-  padding: 12px 22px; border-radius: 8px; background: var(--accent); color: oklch(0.14 0.02 250);
+  padding: 12px 22px; border-radius: 8px; background: var(--accent); color: var(--ink);
   font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap;
 }
 .generate-btn.disabled { opacity: 0.6; cursor: default; }

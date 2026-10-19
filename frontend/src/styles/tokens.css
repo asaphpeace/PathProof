@@ -1,28 +1,32 @@
+@import '@sentinel/ui-primitives/src/brand.css';
 @import '@sentinel/ui-primitives/src/primitives.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
 /*
- * Command's new visual language — migrated from Command_New_face.html
- * (see BUILD_PLAN.md's frontend migration notes). OKLCH palette + IBM Plex
- * Mono for data/mono text, replacing the earlier cyan/JetBrains-Mono look.
+ * PathProof's visual language, on the Foundation Security Labs brand layer
+ * (@sentinel/ui-primitives/src/brand.css). Colours come from the shared
+ * --fsl-* palette so PathProof and ZoneProof read as one platform; the teal
+ * accent stays PathProof's own module colour. IBM Plex Mono for data/mono
+ * text, as migrated from Command_New_face.html (see BUILD_PLAN.md).
  *
  * Names prefixed --ui-* satisfy the contract @sentinel/ui-primitives
- * expects; --bg/--surface/etc are Command-specific and used directly in
- * this app's own components/screens, matching the mockup 1:1.
+ * expects; --bg/--surface/etc are this app's names, used directly in its
+ * own components/screens.
  */
 :root {
-  --bg:      oklch(0.13 0.02 250);
-  --surface: oklch(0.18 0.02 250);
-  --surface2: oklch(0.23 0.02 250);
-  --border:  oklch(0.28 0.015 250);
-  --text:    oklch(0.95 0.01 250);
-  --text2:   oklch(0.66 0.02 250);
-  --text3:   oklch(0.5 0.02 250);
-  --accent:  oklch(0.75 0.14 195);
+  --bg:      var(--fsl-bg);
+  --surface: var(--fsl-surface);
+  --surface2: var(--fsl-hover);
+  --border:  var(--fsl-border);
+  --text:    var(--fsl-text);
+  --text2:   var(--fsl-text-2);
+  --text3:   var(--fsl-text-3);
+  --ink:     var(--fsl-ink);
+  --accent:  var(--fsl-pathproof);
   --violet:  oklch(0.72 0.14 290);
-  --amber:   oklch(0.78 0.14 80);
-  --red:     oklch(0.68 0.19 25);
-  --green:   oklch(0.74 0.13 155);
+  --amber:   var(--fsl-warn);
+  --red:     var(--fsl-bad);
+  --green:   var(--fsl-good);
 
   /* fonts */
   --font-body: 'Inter', -apple-system, system-ui, sans-serif;
@@ -74,4 +78,4 @@ body {
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: oklch(0.32 0.02 250); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--fsl-border); border-radius: 4px; }

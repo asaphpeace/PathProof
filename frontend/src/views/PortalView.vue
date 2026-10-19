@@ -3,7 +3,7 @@
     <div class="header-row">
       <div>
         <h1 class="title">Multi-Tenant Portfolio</h1>
-        <p class="subtitle">Real Sentinel Score, domain coverage, and cert/DMARC posture across every managed client tenant.</p>
+        <p class="subtitle">Real ZoneProof Score, domain coverage, and cert/DMARC posture across every managed client tenant.</p>
       </div>
       <div v-if="!upgradeRequired" class="add-btn" :class="{ disabled: creating }" @click="!creating && startCreate()">+ New client</div>
     </div>

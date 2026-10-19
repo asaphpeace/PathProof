@@ -41,7 +41,7 @@
           mode="draft" :subject="previewModal.subject" :body-html="previewModal.bodyHtml"
           :to-label="previewModal.toLabel" title="Review before re-targeting"
           footer-note="This is exactly what will send if you approve — nothing is regenerated after this point."
-          from-label="Sentinel"
+          from-label="PathProof"
         />
         <p v-if="retargetError" class="error-inline">{{ retargetError }}</p>
         <div class="preview-launch-actions">

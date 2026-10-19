@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <form class="login-card" @submit.prevent="submit">
-      <h1>Sentinel Command</h1>
+      <h1>PathProof</h1>
       <input v-model="email" type="email" placeholder="Email" autocomplete="username" required />
       <input v-model="password" type="password" placeholder="Password" autocomplete="current-password" required />
       <span v-if="error" class="error">{{ error }}</span>

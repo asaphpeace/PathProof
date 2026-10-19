@@ -119,7 +119,7 @@
             </template>
             <textarea v-else v-model="form.body_html" class="input code-area" placeholder="<p>...</p>"></textarea>
           </div>
-          <p class="sender-note">Sends from <b>{{ sendingIdentity || '…' }}</b> — every simulated send uses Sentinel's own verified identity, never the tenant's domain, so this isn't editable per template.</p>
+          <p class="sender-note">Sends from <b>{{ sendingIdentity || '…' }}</b> — every simulated send uses PathProof's own verified identity, never the tenant's domain, so this isn't editable per template.</p>
         </div>
 
         <div class="editor-preview">
@@ -127,7 +127,7 @@
             mode="draft"
             :subject="form.subject || '(no subject yet)'"
             :body-html="form.body_html || '<p><em>Nothing written yet.</em></p>'"
-            :from-label="sendingIdentity || 'Sentinel'"
+            :from-label="sendingIdentity || 'PathProof'"
             to-label="Preview only — not a real recipient"
             title="Live preview"
             footer-note="Updates as you type. Use Send test email to see real inbox rendering before saving."

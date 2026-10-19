@@ -17,8 +17,8 @@
         <div class="kv-row"><span class="kv-label">Recipient privacy</span><span class="kv-value">{{ meta.recipient_privacy_policy }}</span></div>
         <div class="kv-row"><span class="kv-label">Report suspicious email to</span><span class="kv-value mono">{{ meta.report_suspicious_email_address }}</span></div>
       </div>
-      <p class="hint">Every simulation sends from Sentinel's own verified identity — never your domain. This isn't per-tenant configurable, so there's nothing to set here; if your mail gateway blocks it, allowlist the sending identity and tracking domain above. The report address above is real and separate from simulations — anyone can forward a real suspicious email there for your security team to triage. <RouterLink :to="{ name: 'phishing-triage' }" class="link-btn">Open the triage queue →</RouterLink></p>
-      <p class="hint">Sends and reports intentionally come from different addresses, not a typo: sends always come from Sentinel's own verified identity above, and reports go to your tenant's own dedicated inbox on a separate domain — so a compromised sending identity could never intercept the reports meant to catch it.</p>
+      <p class="hint">Every simulation sends from PathProof's own verified identity — never your domain. This isn't per-tenant configurable, so there's nothing to set here; if your mail gateway blocks it, allowlist the sending identity and tracking domain above. The report address above is real and separate from simulations — anyone can forward a real suspicious email there for your security team to triage. <RouterLink :to="{ name: 'phishing-triage' }" class="link-btn">Open the triage queue →</RouterLink></p>
+      <p class="hint">Sends and reports intentionally come from different addresses, not a typo: sends always come from PathProof's own verified identity above, and reports go to your tenant's own dedicated inbox on a separate domain — so a compromised sending identity could never intercept the reports meant to catch it.</p>
     </div>
 
     <div class="card">
@@ -68,7 +68,7 @@
         <div class="spoof-input-row">
           <span class="to-label">TO</span>
           <span class="verify-hint">name a mailbox to receive the spoof</span>
-          <span class="mini-btn disabled">Verify in Sentinel first</span>
+          <span class="mini-btn disabled">Verify in ZoneProof first</span>
         </div>
       </div>
     </div>
@@ -155,7 +155,7 @@
 
     <div class="card">
       <div class="header-row"><h2>Landing page branding</h2></div>
-      <p class="hint">Not yet configurable — every campaign uses Sentinel's generic built-in landing pages (Generic sign-in / IT service portal / Document sign-in). Custom branding for these, and cloning a real company login page, are both deliberately out of scope for now — the latter for real brand-impersonation-risk reasons, not an oversight.</p>
+      <p class="hint">Not yet configurable — every campaign uses PathProof's generic built-in landing pages (Generic sign-in / IT service portal / Document sign-in). Custom branding for these, and cloning a real company login page, are both deliberately out of scope for now — the latter for real brand-impersonation-risk reasons, not an oversight.</p>
     </div>
 
     <div class="card">
@@ -506,7 +506,7 @@ onMounted(() => {
 .select-wrap select { appearance: none; width: 100%; }
 .select-chevron { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 11px; pointer-events: none; }
 
-.connect-btn { background: var(--accent); color: #0b0d12; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 7px; cursor: pointer; }
+.connect-btn { background: var(--accent); color: var(--ink); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 7px; cursor: pointer; }
 .connect-btn.disabled { opacity: .5; cursor: default; }
 .revoke-btn { background: transparent; border: 1px solid var(--border); color: var(--text2); font-size: 11px; padding: 5px 10px; border-radius: 6px; cursor: pointer; }
 .revoke-btn:hover { border-color: var(--red); color: var(--red); }

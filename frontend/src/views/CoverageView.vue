@@ -182,7 +182,7 @@ function posColor(pos: string): string {
   return { GK: 'var(--green)', DEF: 'var(--accent)', MID: 'var(--violet)', FWD: 'var(--amber)' }[pos] ?? 'var(--accent)'
 }
 function statusColor(kind: StatusKind): string {
-  return { 'not-started': 'oklch(0.55 0.02 250)', partial: 'var(--amber)', done: 'var(--green)' }[kind]
+  return { 'not-started': 'var(--text3)', partial: 'var(--amber)', done: 'var(--green)' }[kind]
 }
 
 const lineup = computed(() => STARTING_XI.map(f => {
@@ -288,7 +288,7 @@ async function runFeature(f: { feature: string; running: boolean }) {
       const domains = await api.domains()
       const domain = domains.find((d: any) => d.ownership_verified) ?? domains[0]
       if (!domain) {
-        actionError.value = 'No domain connected yet — add and verify one in Sentinel V1 first.'
+        actionError.value = 'No domain connected yet — add and verify one in ZoneProof first.'
         moduleRuns.value = { ...moduleRuns.value, [f.feature]: { status: 'error' } }
         return
       }
