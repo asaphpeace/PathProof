@@ -1,0 +1,8 @@
+{
+  "name": "sentinel-command",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "packages/*"
+  ]
+}

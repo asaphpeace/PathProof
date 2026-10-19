@@ -1,0 +1,27 @@
+/*
+ * Shared structural scale — spacing and radius only, deliberately no
+ * color or font values here. Each app (V1, Command) supplies its own
+ * --ui-* color/font variables in its own tokens.css; this file only
+ * fixes the *shape* language so the two products don't visually diverge
+ * as new screens get built, per ARCHITECTURE.md's design-token split.
+ *
+ * Consuming app's tokens.css must define:
+ *   --ui-bg-panel, --ui-border, --ui-border-hover,
+ *   --ui-text-primary, --ui-text-secondary, --ui-text-muted,
+ *   --ui-accent, --ui-accent-contrast,
+ *   --ui-font-body, --ui-font-mono
+ */
+:root {
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 14px;
+}

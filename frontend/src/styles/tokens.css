@@ -1,0 +1,77 @@
+@import '@sentinel/ui-primitives/src/primitives.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/*
+ * Command's new visual language — migrated from Command_New_face.html
+ * (see BUILD_PLAN.md's frontend migration notes). OKLCH palette + IBM Plex
+ * Mono for data/mono text, replacing the earlier cyan/JetBrains-Mono look.
+ *
+ * Names prefixed --ui-* satisfy the contract @sentinel/ui-primitives
+ * expects; --bg/--surface/etc are Command-specific and used directly in
+ * this app's own components/screens, matching the mockup 1:1.
+ */
+:root {
+  --bg:      oklch(0.13 0.02 250);
+  --surface: oklch(0.18 0.02 250);
+  --surface2: oklch(0.23 0.02 250);
+  --border:  oklch(0.28 0.015 250);
+  --text:    oklch(0.95 0.01 250);
+  --text2:   oklch(0.66 0.02 250);
+  --text3:   oklch(0.5 0.02 250);
+  --accent:  oklch(0.75 0.14 195);
+  --violet:  oklch(0.72 0.14 290);
+  --amber:   oklch(0.78 0.14 80);
+  --red:     oklch(0.68 0.19 25);
+  --green:   oklch(0.74 0.13 155);
+
+  /* fonts */
+  --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  /* Default: matches the app's existing mono-label character. Only
+     .phishing-scope overrides this to var(--font-body) — see below. */
+  --font-label: var(--font-mono);
+
+  /* @sentinel/ui-primitives contract */
+  --ui-bg-panel:       var(--surface);
+  --ui-border:         var(--border);
+  --ui-border-hover:   var(--text3);
+  --ui-text-primary:   var(--text);
+  --ui-text-secondary: var(--text2);
+  --ui-text-muted:     var(--text3);
+  --ui-accent:         var(--accent);
+  --ui-accent-contrast: var(--bg);
+  --ui-font-body:      var(--font-body);
+  --ui-font-mono:      var(--font-mono);
+}
+
+/*
+ * Phishing/Awareness sub-brand (Phishing Simulation roadmap — design
+ * adoption pass). Scoped to .phishing-scope, set on the workspace content
+ * area only when the active route is under /phishing — never on the
+ * global sidebar/topbar chrome, which stays the app's own teal identity.
+ * Every component in this app reads color via var(--accent) already, so
+ * overriding it here re-colors every button/toggle/active-state inside
+ * the scope without touching each component's own CSS.
+ */
+.phishing-scope {
+  --accent: var(--violet);
+  --font-label: var(--font-body);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+@keyframes dashmove { to { stroke-dashoffset: -24; } }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(0.32 0.02 250); border-radius: 4px; }
